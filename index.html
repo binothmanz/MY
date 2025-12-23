@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برامج تدريب المعلمين – التسجيل عبر WhatsApp</title>
+    <meta name="description" content="صفحة تسجيل برامج تدريبية للمعلمين عبر WhatsApp. تعلم استراتيجيات التدريس الحديثة، إدارة الصف، التقويم، التعلم التفاعلي، وتطوير مهارات التدريس.">
+    <meta name="keywords" content="برامج تدريب المعلمين, تدريب المعلمين, دورات تعليمية, WhatsApp, تطوير مهارات التدريس, تعليم, تدريب">
+    
+    <!-- خطوط Google Fonts للعربية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animate.css للحركات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2E7D32;
+            --primary-dark: #1B5E20;
+            --primary-light: #4CAF50;
+            --secondary-color: #FF9800;
+            --secondary-dark: #F57C00;
+            --accent-color: #2196F3;
+            --light-bg: #f8f9fa;
+            --dark-text: #333333;
+            --light-text: #ffffff;
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            --border-radius: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+        
+        /* شريط التنقل العلوي */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: var(--light-text);
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+        
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        
+        /* رأس الصفحة الرئيسي */
+        .hero {
+            background: linear-gradient(rgba(46, 125, 50, 0.9), rgba(27, 94, 32, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            text-align: center;
+            padding: 6rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232E7D32' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        /* قسم البطاقات */
+        .programs-section {
+            padding: 5rem 5%;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary-color);
+            bottom: -10px;
+            right: 50%;
+            transform: translateX(50%);
+            border-radius: 2px;
+        }
+        
+        .section-header p {
+            color: #666;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+            font-size: 1.1rem;
+        }
+        
+        /* البطاقات المحسنة */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .card-header {
+            padding: 1.5rem 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .card-price-tag {
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        
+        .card-price-tag.free {
+            background-color: rgba(76, 175, 80, 0.15);
+            color: var(--primary-dark);
+        }
+        
+        .card-price-tag.paid {
+            background-color: rgba(255, 152, 0, 0.15);
+            color: var(--secondary-dark);
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .card-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        
+        .card-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .card-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .card-features li i {
+            color: var(--primary-color);
+            margin-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .card-footer {
+            padding: 1rem 1.5rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(to left, #25D366, #128C7E);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            text-decoration: none;
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .duration {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* قسم الملاحظات */
+        .notes-section {
+            background: linear-gradient(135deg, #f5f7fa, #e4e8f0);
+            padding: 4rem 5%;
+            margin-top: 4rem;
+            border-radius: var(--border-radius);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .notes-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .notes-icon {
+            flex: 0 0 auto;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+        
+        .notes-content {
+            flex: 1;
+        }
+        
+        .notes-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .notes-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        /* فوتر الصفحة */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            padding: 4rem 5% 2rem;
+            margin-top: 5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            right: 0;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.8rem;
+            display: block;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column a:hover {
+            color: var(--secondary-color);
+            padding-right: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* زر العودة للأعلى */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-5px);
+        }
+        
+        /* تصميم متجاوب */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 5%;
+            }
+            
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 100%;
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding: 4rem 5%;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                gap: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .notes-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .notes-icon {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            
+            .back-to-top {
+                left: 1rem;
+                bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .program-card {
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* تأثيرات إضافية */
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(255, 152, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 152, 0, 0); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="logo-text">تدريب المعلمين</div>
+        </div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="#programs">البرامج</a>
+            <a href="#about">من نحن</a>
+            <a href="#contact">اتصل بنا</a>
+            <a href="https://wa.me/967772551220" target="_blank">تواصل مباشر</a>
+        </div>
+    </nav>
+    
+    <!-- رأس الصفحة الرئيسي -->
+    <header class="hero">
+        <div class="hero-content animate__animated animate__fadeIn">
+            <h1>برامج تدريب المعلمين المتطورة</h1>
+            <p>أنا مدرب معلمين محترف، أقدم برامج تدريبية متخصصة لتطوير مهارات التدريس والإدارة الصفية والتقويم والتعلم التفاعلي بأحدث الأساليب التربوية.</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="trainedTeachers">0</span>
+                    <span class="stat-label">معلم تم تدريبهم</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="trainingPrograms">0</span>
+                    <span class="stat-label">برنامج تدريبي</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="schoolsCollaborated">0</span>
+                    <span class="stat-label">مدرسة تعاملت معنا</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- قسم البرامج -->
+    <section class="programs-section" id="programs">
+        <div class="section-header">
+            <h2>برامجنا التدريبية</h2>
+            <p>اختر من بين مجموعة برامجنا التدريبية المصممة خصيصًا لتطوير مهارات المعلمين ورفع كفاءتهم التعليمية</p>
+        </div>
+        
+        <div class="cards-container">
+            <!-- بطاقة 1 -->
+            <div class="program-card animate__animated animate__fadeInUp">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="card-price-tag free">مجانًا</div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>استراتيجيات التدريس الحديثة</h3>
+                    <p>برنامج تدريبي متكامل يهدف إلى رفع كفاءة المعلمين من خلال أساليب تعليم مبتكرة وتقنيات تدريس معاصرة.</p>
+                    
+                    <ul class="card-features">
+                        <li><i class="fas fa-check-circle"></i> تعلم أحدث استراتيجيات التدريس</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم أنشطة تعليمية تفاعلية</li>
+                        <li><i class="fas fa-check-circle"></i> تطبيقات عملية مباشرة في الصف</li>
+                    </ul>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="duration">
+                        <i class="far fa-clock"></i>
+                        <span>8 ساعات تدريبية</span>
+                    </div>
+                    <a href="https://wa.me/967772551220?text=أرغب%20في%20الاشتراك%20في%20برنامج%20استراتيجيات%20التدريس%20الحديثة" 
+                       class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        سجل الآن
+                    </a>
+                </div>
+            </div>
+            
+            <!-- بطاقة 2 -->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.1s">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-price-tag free">مجانًا</div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>إدارة الصف بفعالية</h3>
+                    <p>برنامج يركز على طرق إدارة الصف بشكل فعال وتطبيق استراتيجيات سلوكية ناجحة لتحقيق بيئة تعليمية مثالية.</p>
+                    
+                    <ul class="card-features">
+                        <li><i class="fas fa-check-circle"></i> تقنيات إدارة السلوك الصفي</li>
+                        <li><i class="fas fa-check-circle"></i> بناء أنظمة وقواعد صفية فعالة</li>
+                        <li><i class="fas fa-check-circle"></i> حل مشكلات الصف الدراسي</li>
+                    </ul>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="duration">
+                        <i class="far fa-clock"></i>
+                        <span>6 ساعات تدريبية</span>
+                    </div>
+                    <a href="https://wa.me/967772551220?text=أرغب%20في%20الاشتراك%20في%20برنامج%20إدارة%20الصف%20بفعالية" 
+                       class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        سجل الآن
+                    </a>
+                </div>
+            </div>
+            
+            <!-- بطاقة 3 -->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-price-tag free">مجانًا</div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>التقويم من أجل التعلم</h3>
+                    <p>تعلم كيفية إعداد أدوات تقييم فعالة تساعد على تحسين تعلم الطلاب بشكل مستمر وقياس التقدم بدقة.</p>
+                    
+                    <ul class="card-features">
+                        <li><i class="fas fa-check-circle"></i> تصميم أدوات تقييم متنوعة</li>
+                        <li><i class="fas fa-check-circle"></i> تحليل نتائج التقويم</li>
+                        <li><i class="fas fa-check-circle"></i> استخدام التقويم لتحسين التعلم</li>
+                    </ul>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="duration">
+                        <i class="far fa-clock"></i>
+                        <span>7 ساعات تدريبية</span>
+                    </div>
+                    <a href="https://wa.me/967772551220?text=أرغب%20في%20الاشتراك%20في%20برنامج%20التقويم%20من%20أجل%20التعلم" 
+                       class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        سجل الآن
+                    </a>
+                </div>
+            </div>
+            
+            <!-- بطاقة 4 -->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.3s">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="card-price-tag free">مجانًا</div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>التعلم التفاعلي بالتكنولوجيا</h3>
+                    <p>طرق مبتكرة لدمج التكنولوجيا في الصفوف الدراسية لتعزيز المشاركة الطلابية وتحقيق تعلم فعال.</p>
+                    
+                    <ul class="card-features">
+                        <li><i class="fas fa-check-circle"></i> أدوات تكنولوجية للتعليم</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم أنشطة تفاعلية رقمية</li>
+                        <li><i class="fas fa-check-circle"></i> منصات التعليم الإلكتروني</li>
+                    </ul>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="duration">
+                        <i class="far fa-clock"></i>
+                        <span>10 ساعات تدريبية</span>
+                    </div>
+                    <a href="https://wa.me/967772551220?text=أرغب%20في%20الاشتراك%20في%20برنامج%20التعلم%20التفاعلي%20باستخدام%20التكنولوجيا" 
+                       class="whatsapp-btn pulse" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        سجل الآن
+                    </a>
+                </div>
+            </div>
+            
+            <!-- بطاقة 5 -->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.4s">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <div class="card-price-tag free">مجانًا</div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>مهارات التدريس الإبداعي</h3>
+                    <p>استراتيجيات وأفكار مبتكرة تساعد المعلمين على تقديم دروس أكثر إبداعية وجاذبية للطلاب.</p>
+                    
+                    <ul class="card-features">
+                        <li><i class="fas fa-check-circle"></i> تقنيات التدريس الإبداعي</li>
+                        <li><i class="fas fa-check-circle"></i> تصميم دروس جذابة</li>
+                        <li><i class="fas fa-check-circle"></i> تنمية التفكير الإبداعي لدى الطلاب</li>
+                    </ul>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="duration">
+                        <i class="far fa-clock"></i>
+                        <span>8 ساعات تدريبية</span>
+                    </div>
+                    <a href="https://wa.me/967772551220?text=أرغب%20في%20الاشتراك%20في%20برنامج%20تطوير%20مهارات%20التدريس%20الإبداعي" 
+                       class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        سجل الآن
+                    </a>
+                </div>
+            </div>
+            
+            <!-- بطاقة 6 -->
+            <div class="program-card animate__animated animate__fadeInUp" style="animation-delay: 0.5s">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="card-price-tag paid">مدفوع</div>
+                </div>
+                
+                <div class="card-content">
+                    <h3>شرارة الدافعية</h3>
+                    <p>برنامج تدريبي متقدم يركز على تنمية مهارات إشعال الدافعية والحماس لدى الطلاب لتحقيق أفضل النتائج.</p>
+                    
+                    <ul class="card-features">
+                        <li><i class="fas fa-check-circle"></i> استراتيجيات تحفيز الطلاب</li>
+                        <li><i class="fas fa-check-circle"></i> بناء بيئة تعليمية محفزة</li>
+                        <li><i class="fas fa-check-circle"></i> تعزيز الانتماء للتعلم</li>
+                    </ul>
+                </div>
+                
+                <div class="card-footer">
+                    <div class="duration">
+                        <i class="far fa-clock"></i>
+                        <span>12 ساعة تدريبية</span>
+                    </div>
+                    <a href="https://wa.me/967772551220?text=أرغب%20في%20الاشتراك%20في%20برنامج%20شرارة%20الدافعية%20المدفوع" 
+                       class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        سجل الآن
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- قسم الملاحظات -->
+    <section class="notes-section" id="about">
+        <div class="notes-container">
+            <div class="notes-icon floating">
+                <i class="fas fa-school"></i>
+            </div>
+            <div class="notes-content">
+                <h3>ملاحظات هامة</h3>
+                <p>هذه البرامج التدريبية يتم تقديمها بشكل جماعي للمدارس الأهلية والحكومية بطريقة أونلاين وبشكل احترافي. نقدم حزم تدريبية مخصصة وفق احتياجات كل مدرسة، مع إمكانية تخصيص المحتوى ليتناسب مع البيئة التعليمية المستهدفة. تتضمن البرامج مواد تدريبية تفاعلية، تطبيقات عملية، ومتابعة بعد التدريب لضمان تحقيق أقصى استفادة.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>عن المدرب</h4>
+                <p>مدرب معلمين معتمد، أقدم برامج تطوير مهني للمعلمين منذ أكثر من 10 سنوات، متخصص في استراتيجيات التدريس الحديثة وإدارة الصفوف الدراسية.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/967772551220" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h4>روابط سريعة</h4>
+                <a href="#programs">البرامج التدريبية</a>
+                <a href="#about">من نحن</a>
+                <a href="#contact">اتصل بنا</a>
+                <a href="https://wa.me/967772551220" target="_blank">التسجيل عبر واتساب</a>
+            </div>
+            
+            <div class="footer-column">
+                <h4>معلومات الاتصال</h4>
+                <p><i class="fas fa-phone-alt" style="margin-left: 8px;"></i> 967772551220+</p>
+                <p><i class="fas fa-envelope" style="margin-left: 8px;"></i> info@teacher-training.com</p>
+                <p><i class="fas fa-map-marker-alt" style="margin-left: 8px;"></i> اليمن - صنعاء</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; برامج تدريب المعلمين <span id="currentYear"></span></p>
+        </div>
+    </footer>
+    
+    <!-- زر العودة للأعلى -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <script>
+        // جافا سكريبت لتحسين التفاعل
+        document.addEventListener('DOMContentLoaded', function() {
+            // إعداد سنة حقوق النشر الحالية
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // القائمة المتحركة للهواتف
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.getElementById('navLinks');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                    ? '<i class="fas fa-times"></i>' 
+                    : '<i class="fas fa-bars"></i>';
+            });
+            
+            // إغلاق القائمة عند النقر على رابط
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // زر العودة للأعلى
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // عداد الأرقام المتحركة
+            function animateCounter(elementId, finalValue, duration) {
+                let current = 0;
+                const increment = finalValue / (duration / 16); // 60fps
+                const element = document.getElementById(elementId);
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= finalValue) {
+                        current = finalValue;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current);
+                }, 16);
+            }
+            
+            // تشغيل العدادات عند التمرير للقسم
+            const observerOptions = {
+                threshold: 0.5
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter('trainedTeachers', 1250, 2000);
+                        animateCounter('trainingPrograms', 6, 1500);
+                        animateCounter('schoolsCollaborated', 85, 2500);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            observer.observe(document.querySelector('.hero'));
+            
+            // تأثيرات عند التمرير للبطاقات
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                        cardObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            document.querySelectorAll('.program-card').forEach(card => {
+                cardObserver.observe(card);
+            });
+            
+            // إضافة تأثير النقر على البطاقات
+            document.querySelectorAll('.program-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('whatsapp-btn')) {
+                        this.style.transform = 'scale(0.98)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 150);
+                    }
+                });
+            });
+            
+            // تحسين رسالة الواتساب حسب البرنامج
+            document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    // يمكننا هنا تتبع النقرات إذا أردنا
+                    console.log('تم النقر على زر واتساب: ' + this.getAttribute('href'));
+                });
+            });
+        });
+    </script>
+</body>
+</html>
